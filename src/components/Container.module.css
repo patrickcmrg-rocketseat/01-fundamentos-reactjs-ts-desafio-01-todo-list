@@ -1,0 +1,29 @@
+.container {
+    flex: 1;
+}
+
+.newTask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newTask input {
+    width: 39.875rem;
+    height: 3.375rem;
+    background-color: var(--gray-500);
+    border-radius: 8px;
+    border-width: 1;
+    border-color: var(--gray-700);
+    margin-right: 0.5rem;
+}
+
+.newTask button {
+    width: 5.625rem;
+    height: 3.375rem;
+
+    background-color: var(--blue-500);
+    border-radius: 0.5em;
+    border-width: 0px;
+}
+

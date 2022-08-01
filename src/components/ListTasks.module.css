@@ -1,0 +1,50 @@
+.container {
+    flex: 1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    /* background-color: azure; */
+}
+
+.info {
+    width: 46rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info div {
+    display: flex;
+    justify-content: center;
+}
+
+.infoName div {
+    background-color: var(--gray-400);
+    border-radius: 8px;
+    width: 1.563rem;
+    height: 1.188rem;
+}
+
+.infoName p {
+    color: var(--blue-500);
+}
+
+.empty {
+    width: 46rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: solid var(--gray-400);
+    border-radius: 1rem;
+    border-width: 1px 0px 0px 0px;
+    margin-top: 1.5rem;
+
+    /* background-color: antiquewhite; */
+}
+
+.noTask {
+    justify-content: center;
+    align-items: center;
+}
