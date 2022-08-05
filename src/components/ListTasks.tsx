@@ -15,16 +15,6 @@ const task = [
         text: ' neque turpis turpis semper. Duis vel sed fames integer.'
     },
     {
-        id: '3',
-        status: false,
-        text: ' Duis vel sed fames integer.'
-    },
-    {
-        id: '4',
-        status: false,
-        text: 'integer.'
-    },
-    {
         id: '5',
         status: true,
         text: 'integer 2222.'

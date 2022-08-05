@@ -2,6 +2,25 @@
     flex: 1;
 }
 
+.botao {
+    width: 5.625rem;
+    height: 3.375rem;
+
+    background-color: var(--blue-500);
+    border-radius: 0.5em;
+    border-width: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao text {
+    margin-right: 0.5rem;
+    color: var(--white);
+    font-weight: bold;
+}
+
 .newTask {
     display: flex;
     justify-content: center;
@@ -16,14 +35,9 @@
     border-width: 1;
     border-color: var(--gray-700);
     margin-right: 0.5rem;
+    padding-left: 1rem;
+    color: var(--gray-100);
 }
 
-.newTask button {
-    width: 5.625rem;
-    height: 3.375rem;
 
-    background-color: var(--blue-500);
-    border-radius: 0.5em;
-    border-width: 0px;
-}
 
