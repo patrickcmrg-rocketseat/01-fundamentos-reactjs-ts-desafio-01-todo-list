@@ -15,9 +15,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    padding: 20px;
 }
 
 .container p {
+    padding: 20px;
     color: var(--gray-100);
 }
 
@@ -29,8 +32,6 @@
     width: 1.091rem;
     height: 1.091rem;
     
-    border: '2px solid red';
-
     border-radius: 10px;
     border-color: var(--blue-500);
 

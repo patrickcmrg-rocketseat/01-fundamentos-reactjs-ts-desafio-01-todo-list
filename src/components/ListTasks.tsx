@@ -1,44 +1,62 @@
-import styles from './ListTasks.module.css'
+import { useState } from "react";
 
+import styles from './ListTasks.module.css'
 import img_clipboard from '../assets/clipboard.svg'
 
 import { Task } from './Task'
-const task = [
-    {
-        id: '1',
-        status: false,
-        text: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.'
-    },
-    {
-        id: '2',
-        status: false,
-        text: ' neque turpis turpis semper. Duis vel sed fames integer.'
-    },
-    {
-        id: '5',
-        status: true,
-        text: 'integer 2222.'
-    },
-    {
-        id: '6',
-        status: true,
-        text: 'integer.'
-    },
-]
 
-export function ListTasks() {
+interface Task {
+    id: number,
+    status: boolean,
+    text: string,
+}
 
-    //console.log(task)
+interface Taskprops {
+    task: Array<Task>;
+    setTask: (taskId: Array<Task>) => void
+}
+
+export function ListTasks({ task, setTask }: Taskprops) {
+
+    const taskLenght = task.length
+    const taskCompleted = (task.filter((t) => { return t.status === true })).length
+    console.log(taskCompleted)
+
+    function handleTaskChange(taskId: number) {
+        const taskEdit = task.filter((t) => {
+            if (t.id === taskId) {
+                t.status = !t.status
+            }
+            return t;
+        });
+        setTask(taskEdit)
+    }
+
+    function handleTaskDelete(taskId: number) {
+        const taskEdit = task.filter((t) => { return t.id != taskId });
+        setTask(taskEdit)
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.info}>
-                <div className={styles.infoName}>
-                    <p>Tarefas Criadas</p><div>0</div>
-
+                <div className={styles.infoCriada}>
+                    <p>Tarefas Criadas</p>
+                    <div>
+                        <p>{task.length}</p>
+                    </div>
                 </div>
-                <div className={styles.infoName}>
+                <div className={styles.infoConcluida}>
+                    <p>Concluídas</p>
+                    {taskLenght > 0
+                        ? <div>
+                            <p>{taskCompleted} de {taskLenght}</p>
+                        </div>
+                        : <div>
+                            <p>{taskLenght}</p>
+                        </div>
+                    }
 
-                    <div>0</div><p>Concluídas</p>
                 </div>
             </div>
             <div className={styles.empty}>
@@ -53,8 +71,11 @@ export function ListTasks() {
                             return (
                                 <Task
                                     key={t.id}
+                                    id={t.id}
                                     status={t.status}
                                     text={t.text}
+                                    onHandleTaskChange={handleTaskChange}
+                                    onHandleTaskDelete={handleTaskDelete}
                                 />
                             )
                         })}

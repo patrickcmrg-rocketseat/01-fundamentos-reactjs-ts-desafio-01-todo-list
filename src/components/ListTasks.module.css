@@ -20,31 +20,66 @@
     justify-content: center;
 }
 
-.infoName div {
+.infoCriada div {
     background-color: var(--gray-400);
     border-radius: 8px;
     width: 1.563rem;
     height: 1.188rem;
 }
+.infoCriada div p { 
+    color: var(--gray-100);
+}
 
-.infoName p {
+
+.infoCriada p {
     color: var(--blue-500);
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.infoConcluida div {
+    background-color: var(--gray-400);
+    border-radius: 8px;
+    width: 3.563rem;
+    height: 1.188rem;
+    justify-content: center;
+}
+
+.infoConcluida div p { 
+    color: var(--gray-100);
+}
+
+.infoConcluida p {
+    color: var(--purple-500);
+    font-weight: bold;
+    padding-right: 5px;
 }
 
 .empty {
     width: 46rem;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     border: solid var(--gray-400);
     border-radius: 1rem;
     border-width: 1px 0px 0px 0px;
     margin-top: 1.5rem;
 
-    /* background-color: antiquewhite; */
 }
 
 .noTask {
+    border: solid var(--gray-400);
+    border-width: 1px 1px 1px 1px;
+    flex-direction: column;
+    display: flex;
     justify-content: center;
     align-items: center;
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.noTask img {
+    padding-bottom: 1rem;
+}
+
+.noTask p {
+    padding-bottom: 0.5rem;
 }
