@@ -16,12 +16,12 @@ export function Task(task: Task) {
     return (
         <div className={styles.container}>
             {task.status
-                ? <img
-                    src={onCheck}
+                ? <div
+                    className={styles.checkOn}
                     onClick={() => task.onHandleTaskChange(task.id)}
                 />
-                : <img
-                    src={offCheck}
+                : <div
+                    className={styles.checkOff}
                     onClick={() => task.onHandleTaskChange(task.id)}
                 />
             }
@@ -29,8 +29,8 @@ export function Task(task: Task) {
                 ? <p><s>{task.text}</s></p>
                 : <p>{task.text} </p>
             }
-            <img
-                src={img_trash}
+            <div
+                className={styles.imgtrash}
                 onClick={() => task.onHandleTaskDelete(task.id)}
             />
         </div>

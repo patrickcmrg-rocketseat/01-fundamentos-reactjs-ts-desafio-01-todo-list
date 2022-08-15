@@ -32,9 +32,15 @@ export function Container() {
         },
     ]);
 
-    function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
+    function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
+        console.log(event.target)
         event.target.setCustomValidity('');
         setNewTask(event.target.value);
+    }
+
+    function handleNewTaskInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
+        console.log('AQUI')
+        event.target.setCustomValidity('Esse campo é obrigatório!');
     }
 
     function handleTaskAdd() {
@@ -43,18 +49,24 @@ export function Container() {
             status: false,
             text: newTask
         }
-        setTask([t, ...task])
+
+        let tasks = [t, ...task]
+        const taskTrue = tasks.filter((t) => { return t.status === true })
+        const taskFalse = tasks.filter((t) => { return t.status === false })
+        setTask([...taskFalse, ...taskTrue])
         setNewTask('')
     }
 
     return (
         <div className={styles.container}>
             <div className={styles.newTask}>
-                <input
-                    placeholder='Adicione uma nova tarefa'
+                <textarea
                     name="comment"
+                    placeholder='Adicione uma nova tarefa'
                     value={newTask}
                     onChange={handleNewTaskChange}
+                    onInvalid={handleNewTaskInvalid}
+                    required
                 />
                 <div
                     className={styles.botao}
@@ -63,7 +75,6 @@ export function Container() {
                     <p>Criar</p>
                     <img src={svg_criar} />
                 </div>
-
             </div>
             <ListTasks
                 task={task}

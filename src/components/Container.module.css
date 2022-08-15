@@ -6,13 +6,17 @@
     width: 5.625rem;
     height: 3.375rem;
 
-    background-color: var(--blue-500);
+    background-color: var(--blue-dark-500);
     border-radius: 0.5em;
     border-width: 0px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.botao:hover {
+    background-color: var(--blue-500);
 }
 
 .botao p {
@@ -27,7 +31,7 @@
     align-items: center;
 }
 
-.newTask input {
+.newTask textarea {
     width: 39.875rem;
     height: 3.375rem;
     background-color: var(--gray-500);

@@ -20,7 +20,6 @@ export function ListTasks({ task, setTask }: Taskprops) {
 
     const taskLenght = task.length
     const taskCompleted = (task.filter((t) => { return t.status === true })).length
-    console.log(taskCompleted)
 
     function handleTaskChange(taskId: number) {
         const taskEdit = task.filter((t) => {
@@ -29,7 +28,9 @@ export function ListTasks({ task, setTask }: Taskprops) {
             }
             return t;
         });
-        setTask(taskEdit)
+        const taskTrue = taskEdit.filter((t) => { return t.status === true })
+        const taskFalse = taskEdit.filter((t) => { return t.status === false })
+        setTask([...taskFalse, ...taskTrue])
     }
 
     function handleTaskDelete(taskId: number) {
